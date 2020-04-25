@@ -1,5 +1,6 @@
 import React from 'react';
 import Dice from './Dice';
+import sendToFirebase from './firebase';
 import './App.css';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
         <div class={"horizontal"}>
           <Dice/> <Dice/> <Dice/> <Dice/> <Dice/>
         </div>
+          <button onClick={() => {sendToFirebase({"test": "test"})}}>Button</button>
       </header>
     </div>
   );
