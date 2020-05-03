@@ -35,7 +35,8 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "gh-pages": "^2.2.0",
+    "prettier": "^2.0.5"
   },
   "homepage": "http://robertkstarr.github.io/test-npm"
 }

@@ -7,7 +7,7 @@ import React from "react";
 // }
 
 function Dice(props) {
-    return <div class={"Dice"}>Test</div>
+    return <div className={"Dice"}>Test</div>
 }
 
 export default Dice;
