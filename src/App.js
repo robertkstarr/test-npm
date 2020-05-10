@@ -1,11 +1,9 @@
 import React from "react";
-import {
-  auth,
-  databaseRef,
-} from "./firebase";
+import { auth, databaseRef } from "./firebase";
 import "./App.css";
 import SignedIn from "./Body/SignedIn";
 import NotSignedIn from "./Body/NotSignedIn";
+import AddIngredient from "./Body/AddIngredient";
 
 class App extends React.Component {
   constructor(props) {
@@ -25,7 +23,17 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">{this.state.user ? <SignedIn user={this.state.user} firebaseValue={this.state.firebaseValue} /> : <NotSignedIn />}</div>
+      <div className="App">
+        <AddIngredient />
+        {this.state.user ? (
+          <SignedIn
+            user={this.state.user}
+            firebaseValue={this.state.firebaseValue}
+          />
+        ) : (
+          <NotSignedIn />
+        )}
+      </div>
     );
   }
 }

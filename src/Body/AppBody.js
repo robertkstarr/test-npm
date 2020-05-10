@@ -1,5 +1,5 @@
 import React from "react";
-import Ingredents from "./Ingredients";
+import Ingredients from "./Ingredients";
 import UserIdentity from "./UserIdentity";
 import { sendToFirebase } from "../firebase";
 
@@ -8,7 +8,7 @@ class AppBody extends React.Component {
     return (
       <div className="row-center">
         <div className="column">
-          <Ingredents />
+          <Ingredients />
         </div>
         <div className="column">
           <UserIdentity user={this.props.user} />

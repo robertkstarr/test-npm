@@ -36,3 +36,21 @@ export function sendToFirebase() {
     console.log(e);
   }
 }
+
+export function sendNewIngredientToFirebase(name, units) {
+  try {
+    databaseRef.child("Ingredients").child(name).set({
+      name, units
+    });
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+export function removeIngredientFromFirebase(name) {
+  try {
+    databaseRef.child("Ingredients").child(name).remove()
+  } catch(e) {
+    console.log(e)
+  }
+}

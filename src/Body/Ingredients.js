@@ -1,5 +1,7 @@
 import React from "react";
-import { auth, databaseRef } from "../firebase";
+import { auth, databaseRef, removeIngredientFromFirebase } from "../firebase";
+import { showIngredientBox } from "./AddIngredient";
+import RemoveIcon from "./RemoveIcon";
 
 class Ingredients extends React.Component {
   constructor(props) {
@@ -23,14 +25,23 @@ class Ingredients extends React.Component {
         <div className={"Ingredients-List"}>
           {this.state.ingredients ? (
             Object.keys(this.state.ingredients).map((ingredient) => (
-              <div>{ingredient}</div>
+              <div className={"Ingredient"}>
+                <button
+                  onClick={() => {
+                    removeIngredientFromFirebase(ingredient);
+                  }}
+                >
+                  x
+                </button>{" "}
+                <div>{ingredient}</div>
+              </div>
             ))
           ) : (
             <div></div>
           )}
         </div>
         <div>
-          <button>Add Ingredient</button>
+          <button onClick={showIngredientBox}>Add Ingredient</button>
         </div>
       </div>
     );
