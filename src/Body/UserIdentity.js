@@ -3,9 +3,9 @@ import React from "react";
 class UserIdentity extends React.Component {
   render() {
     return (
-      <div>
+      <div className={"UserIdentity"}>
         {this.props.user ? (
-          <img height="250" alt={"User"} src={this.props.user.photoURL} />
+          <img alt={"User"} src={this.props.user.photoURL} />
         ) : (
           ""
         )}

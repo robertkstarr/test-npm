@@ -1,13 +1,11 @@
 import React from "react";
-import AppBody from "./Body/AppBody";
-import Header from "./Header/Header";
 import {
-  signInWithGoogle,
-  signOutOfGoogle,
   auth,
   databaseRef,
 } from "./firebase";
 import "./App.css";
+import SignedIn from "./Body/SignedIn";
+import NotSignedIn from "./Body/NotSignedIn";
 
 class App extends React.Component {
   constructor(props) {
@@ -27,34 +25,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="row">
-          <Header user={this.state.user} />
-        </div>
-        <AppBody
-          user={this.state.user}
-          firebaseValue={this.state.firebaseValue}
-        />
-        <div className="row">
-          {!this.state.user ? (
-            <button
-              onClick={() => {
-                signInWithGoogle();
-              }}
-            >
-              Sign in with Google
-            </button>
-          ) : (
-            <button
-              onClick={() => {
-                signOutOfGoogle();
-              }}
-            >
-              Sign out of Google
-            </button>
-          )}
-        </div>
-      </div>
+      <div className="App">{this.state.user ? <SignedIn user={this.state.user} firebaseValue={this.state.firebaseValue} /> : <NotSignedIn />}</div>
     );
   }
 }
