@@ -4,7 +4,7 @@ import "firebase/firestore";
 import "firebase/database";
 
 const config = {
-  apiKey: "AIzaSyC7KOTYQcMgdECQNIVpmEpJewN1oerw__8",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: "starr-meal-planner.firebaseapp.com",
   databaseURL: "https://starr-meal-planner.firebaseio.com",
   projectId: "starr-meal-planner",

@@ -105,8 +105,8 @@
   flex-direction: row;
 }
 
-.removeIcon {
-  padding-right:1rem;
+.Ingredient button {
+  margin-right:.25rem;
 }
 
 .App-link {

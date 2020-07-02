@@ -1,7 +1,6 @@
 import React from "react";
 import { auth, databaseRef, removeIngredientFromFirebase } from "../firebase";
 import { showIngredientBox } from "./AddIngredient";
-import RemoveIcon from "./RemoveIcon";
 
 class Ingredients extends React.Component {
   constructor(props) {
